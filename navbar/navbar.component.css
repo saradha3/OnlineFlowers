@@ -1,0 +1,15 @@
+.modal{
+    height: max-content;
+}
+
+.login-modal{
+    display: none;
+}
+
+mat-icon{
+    color: grey;
+}
+
+.navbar{
+    background-color: #800F2F;
+}
