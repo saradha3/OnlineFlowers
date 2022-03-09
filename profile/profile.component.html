@@ -1,0 +1,73 @@
+<mat-card>
+    <h3>Your Profile Details</h3>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div>
+                    <div class="container text-center">
+                        <img class="profile-image" [src]="retrievedImage" alt="default pic" />
+                        <h3 class="mt20">{{user.firstname}} {{user.lastname}}</h3>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="d-inline-flex">
+                            <div>
+                                <input type="file" (change)="onFileChanged($event)">
+
+                            </div>
+                            <div>
+                                <input type="button" (click)="onUpload()" value="upload">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-10 offset-md-1 text-center">
+                        <table class="table table-danger table-striped text-center table-borderless table-responsive">
+                            <tbody>
+                                <tr>
+                                    <th>Username</th>
+                                    <td>{{user.username}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Firstname</th>
+                                    <td><input type="text" name="firstname" [(ngModel)]="user.firstname"
+                                            [value]="user.firstname" />
+                                    </td>
+                                    <td><button type="button" (click)="savefirstname()">Save</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Lastname</th>
+                                    <td><input type="text" name="lastname" [(ngModel)]="user.lastname"
+                                            [value]="user.lastname" /></td>
+                                    <td><button type="button" (click)="savelastname()">Save</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td><input type="text" name="address" [(ngModel)]="user.address"
+                                            [value]="user.address" /></td>
+                                    <td><button type="button" (click)="saveaddress()">Save</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><input type="text" name="email" [(ngModel)]="user.email" [value]="user.email" />
+                                    </td>
+                                    <td><button type="button" (click)="saveemail()">Save</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Contact No.</th>
+                                    <td><input type="text" name="phone" [(ngModel)]="user.phone" [value]="user.phone" />
+                                    </td>
+                                    <td><button type="button" (click)="savephone()">Save</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
